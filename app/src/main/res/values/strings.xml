@@ -3,4 +3,24 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="Incident_type">
+        <item>Select incident type</item>
+        <item>General fine</item>
+        <item>Using hydraulic horn</item>
+        <item>Disobey police order</item>
+        <item>Disobeying red signal</item>
+        <item>Careless driving</item>
+        <item>Accident related fine</item>
+        <item>Driving without safety</item>
+        <item>Black smoke emission</item>
+        <item>Modification of car and sale without permission</item>
+        <item>Driving without registration, fitness or route permit</item>
+        <item>Overloading the car</item>
+        <item>Driving without insurance</item>
+        <item>Driving without permission</item>
+        <item>Blocking road or public place</item>
+        <item>Unauthorized touch/use of car</item>
+        <item>Lane violation</item>
+    </string-array>
 </resources>

@@ -1,15 +1,22 @@
 package becker.andy.drivesafe.activities;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 
+import java.lang.reflect.Field;
+
+import becker.andy.drivesafe.MainActivity;
 import becker.andy.drivesafe.PrefConfig;
 import becker.andy.drivesafe.R;
 import becker.andy.drivesafe.fragments.*;
@@ -30,6 +37,17 @@ public class AdminActivity extends AppCompatActivity implements AdminLoginFragme
         transaction.replace(R.id.frame_layout_admin, selectedFragment);
         transaction.commit();
 
+
+        try{
+            ViewConfiguration config=ViewConfiguration.get(this);
+            Field menuKeyField=ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
+            if(menuKeyField !=null)
+                menuKeyField.setAccessible(true);
+            menuKeyField.setBoolean(config, false);
+        }catch(Exception ex)
+        {
+
+        }
 
         admin_frame=(FrameLayout)findViewById(R.id.frame_layout_admin);
         container_frame=(FrameLayout)findViewById(R.id.admin_fragment_container);
@@ -90,5 +108,48 @@ public class AdminActivity extends AppCompatActivity implements AdminLoginFragme
     @Override
     public void performWelcomeDriver() {
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.drawer_view, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId())
+        {
+            case R.id.pending_drivers:
+                //startActivity(new Intent(MainActivity.this,AdminActivity.class));
+                break;
+            case R.id.create_user:
+                //gotoadmin
+                break;
+            case R.id.reporters:
+                //startActivity(new Intent(MainActivity.this, DriverActivity.class));
+                break;
+            case R.id.addreporters:
+                //startActivity(new Intent(MainActivity.this, DriverActivity.class));
+                break;
+            case R.id.registered_drivers:
+                //startActivity(new Intent(MainActivity.this, DriverActivity.class));
+                break;
+            case R.id.recent_affairs:
+                //startActivity(new Intent(MainActivity.this, DriverActivity.class));
+                break;
+            case R.id.dangerous_drivers:
+                //startActivity(new Intent(MainActivity.this, DriverActivity.class));
+                break;
+            case R.id.log_out:
+                //startActivity(new Intent(MainActivity.this, DriverActivity.class));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+
+        //c
     }
 }

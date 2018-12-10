@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/pending_drivers"
+        android:title="Pending Drivers"
+        >
+    </item>
+
+    <item
+        android:id="@+id/create_user"
+        android:title="Create User"
+        >
+    </item>
+
+
+    <item
+        android:id="@+id/reporters"
+        android:title="Reporters"
+        >
+    </item>
+
+    <item
+        android:id="@+id/addreporters"
+        android:title="Add Reporter"
+        >
+    </item>
+
+    <item
+        android:id="@+id/registered_drivers"
+        android:title="Registered Drivers"
+        >
+    </item>
+
+    <item
+        android:id="@+id/recent_affairs"
+        android:title="Recent Affairs"
+        >
+    </item>
+
+    <item
+        android:id="@+id/dangerous_drivers"
+        android:title="Dangerous Drivers"
+        >
+    </item>
+
+    <item
+        android:id="@+id/log_out"
+        android:title="Log Out"
+        >
+    </item>
+
+
+</menu>
