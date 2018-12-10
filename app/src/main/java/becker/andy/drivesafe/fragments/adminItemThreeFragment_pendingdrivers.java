@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import becker.andy.drivesafe.R;
@@ -15,6 +16,7 @@ import becker.andy.drivesafe.activities.AdminActivity;
 import becker.andy.drivesafe.adapters.PendingDriversAdapter;
 import becker.andy.drivesafe.classes.Mytoast;
 import becker.andy.drivesafe.models.GetPendingDrivers;
+import becker.andy.drivesafe.retrofit.AdminApiClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,24 +39,32 @@ public class adminItemThreeFragment_pendingdrivers extends Fragment {
         View view= inflater.inflate(R.layout.fragment_item_three_admin_pendingdrivers, container, false);
         myrecyler=view.findViewById(R.id.pending_recycler);
 
-
         Call<List<GetPendingDrivers>> call= AdminActivity.apiInterface.getPendingDrivers("getPendingDrivers");
         call.enqueue(new Callback<List<GetPendingDrivers>>() {
             @Override
             public void onResponse(Call<List<GetPendingDrivers>> call, Response<List<GetPendingDrivers>> response) {
-                Mytoast.showToast(getActivity(),"Pending Got");
                 Mylist=response.body();
+                Mytoast.showToast(getActivity(),"in Pending");
+                LinearLayoutManager layoutManager=new LinearLayoutManager(getActivity());
+                myrecyler.setLayoutManager(layoutManager);
+                PendingDriversAdapter pendingDriversAdapter=new PendingDriversAdapter(Mylist,getActivity());
+                myrecyler.setAdapter(pendingDriversAdapter);
+                pendingDriversAdapter.setListener(new PendingDriversAdapter.Listener() {
+                    @Override
+                    public void onClick(int position) {
+
+                    }
+                });
+
             }
 
             @Override
             public void onFailure(Call<List<GetPendingDrivers>> call, Throwable t) {
-                    Mytoast.showToast(getActivity(),t.getMessage().toString());
+                Mytoast.showToast(getActivity(),t.getMessage().toString());
             }
         });
-        LinearLayoutManager layoutManager=new LinearLayoutManager(getActivity());
-        myrecyler.setLayoutManager(layoutManager);
-        PendingDriversAdapter pendingDriversAdapter=new PendingDriversAdapter(Mylist,getActivity());
-        myrecyler.setAdapter(pendingDriversAdapter);
+
+
 
 
 

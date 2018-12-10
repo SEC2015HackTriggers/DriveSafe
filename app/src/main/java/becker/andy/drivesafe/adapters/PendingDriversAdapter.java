@@ -2,6 +2,7 @@ package becker.andy.drivesafe.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,10 @@ public class PendingDriversAdapter extends RecyclerView.Adapter<PendingDriversAd
 
     List<GetPendingDrivers>Mylist;
     Context context;
+    private Listener listener;
+    public interface Listener {
+        void onClick(int position);
+    }
 
     public PendingDriversAdapter(List<GetPendingDrivers> mylist, Context context) {
         Mylist = mylist;
@@ -34,25 +39,35 @@ public class PendingDriversAdapter extends RecyclerView.Adapter<PendingDriversAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAdapter myAdapter, int i) {
+    public void onBindViewHolder(@NonNull MyAdapter myAdapter, final int i) {
         myAdapter.pending_name.setText(Mylist.get(i).driver_name);
         myAdapter.pending_licence.setText(Mylist.get(i).licence_no);
-
-        Glide.with(context).load(Mylist.get(i).driver_pic_address)
-                .into(myAdapter.pending_image);
+        myAdapter.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(listener!=null){
+                    listener.onClick(i);
+                }
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return Mylist.size();
     }
+    public void setListener(Listener listener){
+        this.listener = listener;
+    }
 
     public class MyAdapter extends RecyclerView.ViewHolder {
+        CardView cardView;
         TextView pending_name;
         TextView pending_licence;
         ImageView pending_image;
         public MyAdapter(@NonNull View itemView) {
             super(itemView);
+            cardView=itemView.findViewById(R.id.pending_card);
             pending_licence=itemView.findViewById(R.id.pending_licence);
             pending_name=itemView.findViewById(R.id.pending_name);
             pending_image=itemView.findViewById(R.id.pending_image);

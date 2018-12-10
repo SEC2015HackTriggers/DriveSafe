@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import becker.andy.drivesafe.PrefConfig;
 import becker.andy.drivesafe.R;
 import becker.andy.drivesafe.fragments.*;
+import becker.andy.drivesafe.retrofit.AdminApiClient;
 import becker.andy.drivesafe.retrofit.ApiClient;
 import becker.andy.drivesafe.retrofit.ApiInterface;
 
@@ -29,7 +30,7 @@ public class AdminActivity extends AppCompatActivity implements AdminLoginFragme
         admin_frame=(FrameLayout)findViewById(R.id.frame_layout_admin);
         container_frame=(FrameLayout)findViewById(R.id.admin_fragment_container);
 
-        apiInterface= ApiClient.getApiClient().create(ApiInterface.class);
+        apiInterface= AdminApiClient.getApiClient().create(ApiInterface.class);
         prefConfig=new PrefConfig(this);
 
         if(findViewById(R.id.admin_fragment_container)!= null){

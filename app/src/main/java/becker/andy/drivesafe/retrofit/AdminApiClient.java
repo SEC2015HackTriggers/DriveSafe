@@ -6,7 +6,7 @@ import com.google.gson.GsonBuilder;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiClient {
+public class AdminApiClient {
     public static final String BASE_URL="http://192.168.160.113/DriveSafe/";
     public static Retrofit retrofit=null;
 
