@@ -1,6 +1,8 @@
 package becker.andy.drivesafe.fragments;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,7 +11,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import becker.andy.drivesafe.MainActivity;
 import becker.andy.drivesafe.R;
+import becker.andy.drivesafe.activities.AdminActivity;
+import becker.andy.drivesafe.classes.Mytoast;
+import becker.andy.drivesafe.models.AdminLogin;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +27,11 @@ public class AdminLoginFragment extends Fragment {
 
     EditText adminemail, adminpass;
     Button adminlogin;
+
+    public static interface OnPerformanceListerner{
+         public void performWelcome();
+    }
+    OnPerformanceListerner onPerformanceListerner;
 
 
     public AdminLoginFragment() {
@@ -46,6 +60,36 @@ public class AdminLoginFragment extends Fragment {
     }
 
     private void performAdminLogin() {
+        String email=adminemail.getText().toString().trim();
+        String password=adminpass.getText().toString().trim();
+        if(email.equals("") || password.equals("")){
+            return;
+        }
+
+        Call<AdminLogin> call= AdminActivity.apiInterface.performLogin("admin",email,password);
+        call.enqueue(new Callback<AdminLogin>() {
+            @Override
+            public void onResponse(Call<AdminLogin> call, Response<AdminLogin> response) {
+                if(response.body().getResponse().equals("ok")){
+                    AdminActivity.prefConfig.writeLoginStatus(true);
+                    AdminActivity.prefConfig.writeShopName(response.body().getName());
+                    Mytoast.showToast(getActivity(),"Admin Logged In");
+                    onPerformanceListerner.performWelcome();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AdminLogin> call, Throwable t) {
+                    Mytoast.showToast(getActivity(),t.getMessage().toString());
+            }
+        });
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Activity activity= (Activity) context;
+        onPerformanceListerner= (OnPerformanceListerner) activity;
+    }
 }
