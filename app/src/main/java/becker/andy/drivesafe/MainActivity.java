@@ -10,6 +10,9 @@ import android.view.ViewConfiguration;
 
 import java.lang.reflect.Field;
 
+
+import becker.andy.drivesafe.activities.AdminActivity;
+
 import becker.andy.drivesafe.fragments.generalItemOneFragment;
 import becker.andy.drivesafe.fragments.generalItemThreeFragment;
 import becker.andy.drivesafe.fragments.generalItemTwoFragment;
@@ -76,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.admin_login:
-                //gotoadmin
+                startActivity(new Intent(MainActivity.this,AdminActivity.class));
                 break;
            case R.id.reporter_login:
                 //gotoadmin
