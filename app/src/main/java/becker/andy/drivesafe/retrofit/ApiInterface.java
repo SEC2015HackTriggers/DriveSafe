@@ -1,6 +1,9 @@
 package becker.andy.drivesafe.retrofit;
 
+import java.util.List;
+
 import becker.andy.drivesafe.models.AdminLogin;
+import becker.andy.drivesafe.models.GetPendingDrivers;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -13,5 +16,7 @@ public interface ApiInterface {
         Call<AdminLogin> performRegister (@Query("driver_name") String driver_name,@Query("driver_cell_no") String driver_cell_no,@Query("email") String email,
                                           @Query("owners_cell_no") String owner_cell_no,@Query("password") String password,@Query("licence_no") String licence_no,@Query("driver_pic_address") String driver_pic_address);
 
+        @GET("reperterRerports.php")
+        Call<List<GetPendingDrivers>> getPendingDrivers(@Query("task") String task);
 
 }
