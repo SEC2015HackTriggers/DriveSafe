@@ -17,6 +17,7 @@ import java.lang.reflect.Field;
 
 import becker.andy.drivesafe.activities.AdminActivity;
 
+import becker.andy.drivesafe.activities.DriverActivity;
 import becker.andy.drivesafe.fragments.generalItemOneFragment;
 import becker.andy.drivesafe.fragments.generalItemThreeFragment;
 import becker.andy.drivesafe.fragments.generalItemTwoFragment;
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 //gotoadmin
                 break;
             case R.id.driver_reg:
-                //gotoadmin
+                startActivity(new Intent(MainActivity.this, DriverActivity.class));
                 break;
         }
         return super.onOptionsItemSelected(item);

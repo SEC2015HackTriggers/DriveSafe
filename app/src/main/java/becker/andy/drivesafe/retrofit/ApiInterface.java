@@ -10,5 +10,8 @@ public interface ApiInterface {
         Call<AdminLogin> performLogin(@Query("type") String type,@Query("admin_email") String email, @Query("admin_password") String password);
 
         @GET ("register.php")
-        Call<AdminLogin> performRegister(@Query("shop_name") String Shop_name, @Query("email") String Email,@Query("password") String Password);
+        Call<AdminLogin> performRegister (@Query("driver_name") String driver_name,@Query("driver_cell_no") String driver_cell_no,@Query("email") String email,
+                                          @Query("owners_cell_no") String owner_cell_no,@Query("password") String password,@Query("licence_no") String licence_no,@Query("driver_pic_address") String driver_pic_address);
+
+
 }

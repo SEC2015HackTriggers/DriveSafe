@@ -81,4 +81,9 @@ public class AdminActivity extends AppCompatActivity implements AdminLoginFragme
                     }
                 });
     }
+
+    @Override
+    public void performWelcomeDriver() {
+
+    }
 }
