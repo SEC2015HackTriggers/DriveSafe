@@ -17,6 +17,14 @@ public class PrefConfig {
         editor.putBoolean("login_status", status);
         editor.commit();
     }
+    public void writeUser(String user){
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        editor.putString("user",user);
+        editor.commit();
+    }
+    public String readUser(){
+        return sharedPreferences.getString("user","none");
+    }
     public boolean readLoginStatus(){
         return sharedPreferences.getBoolean("login_status",false);
     }

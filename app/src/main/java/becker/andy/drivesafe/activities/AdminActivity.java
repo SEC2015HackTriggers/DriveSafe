@@ -41,4 +41,9 @@ public class AdminActivity extends AppCompatActivity implements AdminLoginFragme
     public void performWelcome() {
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_fragment_container,new AdminOneFragment()).commit();
     }
+
+    @Override
+    public void performWelcomeDriver() {
+
+    }
 }
