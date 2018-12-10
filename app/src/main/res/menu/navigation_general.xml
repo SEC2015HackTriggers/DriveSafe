@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/driver_list"
+        android:icon="@drawable/drivers_list"
+        android:title="Drivers List" />
+
+    <item
+        android:id="@+id/recent_affairs"
+        android:icon="@drawable/recent_affairs"
+        android:title="Recent Affairs" />
+
+    <item
+        android:id="@+id/dang_driver"
+        android:icon="@drawable/dangerous_drivers"
+        android:title="Dangerous Driver" />
+
+</menu>
