@@ -28,8 +28,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        Fragment selectedFragment=new generalItemOneFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_layout, selectedFragment);
+        transaction.commit();
 
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -88,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
            case R.id.reporter_login:
                 //gotoadmin
+                break;
+            case R.id.driver_login:
                 break;
             case R.id.driver_reg:
                 startActivity(new Intent(MainActivity.this, DriverActivity.class));
