@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    >
+
+    <item
+        android:title="Admin Login"
+        android:id="@+id/admin_login"
+        />
+    <item
+        android:title="Reporter Login"
+        android:id="@+id/reporter_login"
+        />
+    <item
+        android:title="Driver Registration"
+        android:id="@+id/driver_reg"
+        />
+</menu>
