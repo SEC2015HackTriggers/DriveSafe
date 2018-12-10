@@ -57,6 +57,8 @@
             android:layout_gravity="center_horizontal"
             android:scaleType="centerCrop"
             android:layout_width="120dp"
+            android:background="@drawable/box_outline_coloured"
+            android:layout_margin="5dp"
             android:layout_height="120dp" />
 
             <Button

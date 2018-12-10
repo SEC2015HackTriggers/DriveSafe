@@ -45,12 +45,6 @@
     </item>
 
     <item
-        android:id="@+id/admin_panel"
-        android:title="Admin Panel"
-        >
-    </item>
-
-    <item
         android:id="@+id/log_out"
         android:title="Log Out"
         >
