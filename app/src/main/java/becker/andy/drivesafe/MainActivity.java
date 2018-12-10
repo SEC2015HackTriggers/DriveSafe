@@ -10,12 +10,18 @@ import android.view.ViewConfiguration;
 
 import java.lang.reflect.Field;
 
+import becker.andy.drivesafe.activities.AdminActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         try{
             ViewConfiguration config=ViewConfiguration.get(this);
@@ -42,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.admin_login:
-                //gotoadmin
+                startActivity(new Intent(MainActivity.this,AdminActivity.class));
                 break;
            case R.id.reporter_login:
                 //gotoadmin

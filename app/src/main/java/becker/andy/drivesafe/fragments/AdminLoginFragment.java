@@ -35,8 +35,17 @@ public class AdminLoginFragment extends Fragment {
         adminemail = view.findViewById(R.id.admin_login_email);
         adminpass = view.findViewById(R.id.admin_login_pass);
         adminlogin = view.findViewById(R.id.admin_login_login);
+        adminlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                performAdminLogin();
+            }
+        });
 
         return view;
+    }
+
+    private void performAdminLogin() {
     }
 
 }
