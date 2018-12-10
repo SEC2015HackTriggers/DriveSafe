@@ -75,7 +75,7 @@ public class AdminActivity extends AppCompatActivity implements AdminLoginFragme
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.frame_layout_admin, selectedFragment);
 
-                        //i
+
                         transaction.commit();
                         return true;
                     }
