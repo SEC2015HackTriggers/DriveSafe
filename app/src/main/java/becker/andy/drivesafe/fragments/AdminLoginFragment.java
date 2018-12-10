@@ -3,6 +3,9 @@ package becker.andy.drivesafe.fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -19,6 +22,8 @@ import becker.andy.drivesafe.models.AdminLogin;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -85,6 +90,12 @@ public class AdminLoginFragment extends Fragment {
             }
         });
     }
+
+    public void SetImage(View view){
+
+    }
+
+
 
     @Override
     public void onAttach(Context context) {
