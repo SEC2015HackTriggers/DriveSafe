@@ -13,6 +13,10 @@
         android:id="@+id/reporter_login"
         />
     <item
+        android:title="Driver Login"
+        android:id="@+id/driver_login"
+        />
+    <item
         android:title="Driver Registration"
         android:id="@+id/driver_reg"
         />

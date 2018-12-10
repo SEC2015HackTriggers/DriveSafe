@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
            case R.id.reporter_login:
                 //gotoadmin
                 break;
+            case R.id.driver_login:
+                break;
             case R.id.driver_reg:
                 startActivity(new Intent(MainActivity.this, DriverActivity.class));
                 break;
