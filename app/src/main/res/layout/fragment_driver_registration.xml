@@ -55,7 +55,7 @@
         android:gravity="center">
 
             <com.joooonho.SelectableRoundedImageView
-                android:id="@+id/userphoto"
+                android:id="@+id/driver_image"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center"
@@ -64,18 +64,20 @@
                 app:sriv_border_color="#FFCC00"
                 app:sriv_border_width="2dp"
                 app:sriv_oval="true" />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Upload"
                 android:background="@color/DS"
                 android:layout_gravity="center"
-                android:id="@+id/setimage"
+                android:id="@+id/upload_image"
                 android:onClick="SetImage"
                 />
 
 
             <EditText
+
             android:id="@+id/driver_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -133,27 +135,6 @@
             android:inputType="textPassword"
             />
 
-        <EditText
-            android:id="@+id/driver_car_numberplate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="  Car registration number"
-            android:ems="10"
-            android:drawableLeft="@drawable/car_reg"
-            android:inputType="textPassword"
-            />
-
-        <EditText
-            android:id="@+id/driver_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="  Permanent address"
-            android:ems="10"
-            android:drawableLeft="@drawable/permanent_address"
-            android:inputType="textPassword"
-            />
-
-
 
     </LinearLayout>
 
@@ -165,7 +146,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/admin_login_login"
+            android:id="@+id/driver_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/round_edge_button"
