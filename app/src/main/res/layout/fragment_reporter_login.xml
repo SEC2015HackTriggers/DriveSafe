@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:layout_margin="40dp"
     android:weightSum="3"
-    tools:context=".fragments.AdminLoginFragment">
+    tools:context=".fragments.ReporterLoginFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -42,7 +42,7 @@
         android:gravity="center"
         android:layout_weight="2">
         <EditText
-            android:id="@+id/admin_login_email"
+            android:id="@+id/reporter_login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="  email"
@@ -51,7 +51,7 @@
             />
 
         <EditText
-            android:id="@+id/admin_login_pass"
+            android:id="@+id/reporter_login_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint=" password"
@@ -69,7 +69,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/admin_login_login"
+            android:id="@+id/reporter_login_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/round_edge_button"
