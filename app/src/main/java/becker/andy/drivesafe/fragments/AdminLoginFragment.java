@@ -1,6 +1,9 @@
 package becker.andy.drivesafe.fragments;
 
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import becker.andy.drivesafe.R;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,5 +52,11 @@ public class AdminLoginFragment extends Fragment {
 
     private void performAdminLogin() {
     }
+
+    public void SetImage(View view){
+
+    }
+
+
 
 }
