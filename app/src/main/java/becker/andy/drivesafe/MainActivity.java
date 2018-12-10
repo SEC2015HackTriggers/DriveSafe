@@ -10,7 +10,12 @@ import android.view.ViewConfiguration;
 
 import java.lang.reflect.Field;
 
+
 import becker.andy.drivesafe.activities.AdminActivity;
+
+import becker.andy.drivesafe.fragments.generalItemOneFragment;
+import becker.andy.drivesafe.fragments.generalItemThreeFragment;
+import becker.andy.drivesafe.fragments.generalItemTwoFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +38,32 @@ public class MainActivity extends AppCompatActivity {
         {
 
         }
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.general_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener
+                (new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        Fragment selectedFragment = null;
+                        switch (item.getItemId()) {
+                            case R.id.driver_list:
+                                selectedFragment = generalItemOneFragment.newInstance();
+                                break;
+                            case R.id.recent_affairs:
+                                selectedFragment = generalItemTwoFragment.newInstance();
+                                break;
+                            case R.id.dang_driver:
+                                selectedFragment = generalItemThreeFragment.newInstance();
+                                break;
+                        }
+                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_layout, selectedFragment);
+                        transaction.commit();
+                        return true;
+                    }
+                });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
