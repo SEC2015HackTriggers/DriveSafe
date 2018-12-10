@@ -25,6 +25,11 @@ public class AdminActivity extends AppCompatActivity implements AdminLoginFragme
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+        Fragment selectedFragment=new adminItemOneFragment_driverslist();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_layout_admin, selectedFragment);
+        transaction.commit();
+
 
         admin_frame=(FrameLayout)findViewById(R.id.frame_layout_admin);
         container_frame=(FrameLayout)findViewById(R.id.admin_fragment_container);
