@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/driver_list_admin"
+        android:icon="@drawable/drivers_list"
+        android:title="Drivers List" />
+
+    <item
+        android:id="@+id/recent_affairs_admin"
+        android:icon="@drawable/recent_affairs"
+        android:title="Recent Affairs" />
+
+    <item
+        android:id="@+id/pending_drivers_admin"
+        android:icon="@drawable/pendingdrivers"
+        android:title="Pending Drivers" />
+
+</menu>
