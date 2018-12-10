@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="40dp"
+
+    tools:context=".fragments.AdminLoginFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- TODO: Update blank fragment layout -->
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="Registration"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:layout_gravity="top"/>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+            <com.joooonho.SelectableRoundedImageView
+                android:id="@+id/driver_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image"
+                app:sriv_border_color="#FFCC00"
+                app:sriv_border_width="2dp"
+                app:sriv_oval="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload"
+                android:background="@color/DS"
+                android:layout_gravity="center"
+                android:id="@+id/upload_image"
+                android:onClick="SetImage"
+                />
+
+
+            <EditText
+
+            android:id="@+id/driver_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="  Name"
+            android:drawableLeft="@drawable/name"
+            android:ems="10"
+            />
+
+        <EditText
+            android:id="@+id/driver_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="  Email"
+            android:drawableLeft="@drawable/email"
+            android:ems="10"
+            />
+
+        <EditText
+            android:id="@+id/driver_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="  Password"
+            android:ems="10"
+            android:drawableLeft="@drawable/password"
+            android:inputType="textPassword"
+            />
+
+        <EditText
+            android:id="@+id/driver_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="  Phone number"
+            android:ems="10"
+            android:drawableLeft="@drawable/phone"
+            android:inputType="textPassword"
+            />
+
+        <EditText
+            android:id="@+id/driver_owner_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="  Owner's phone number"
+            android:ems="10"
+            android:drawableLeft="@drawable/owner_phone"
+            android:inputType="textPassword"
+            />
+
+        <EditText
+            android:id="@+id/driver_license"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="  License number"
+            android:ems="10"
+            android:drawableLeft="@drawable/license_number"
+            android:inputType="textPassword"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/driver_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_edge_button"
+
+            android:text="Register"
+            />
+
+    </LinearLayout>
+    </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
